@@ -104,7 +104,7 @@ jobs:
       run: |
         pushd ${{ env.ORANGEFOX_ROOT }}
         set +e
-        export FOX_AB_DEVICE=1
+        export FOX_VIRTUAL_AB_DEVICE=1
         sed -i 's/return sandboxConfig\.working/return false/g' build/soong/ui/build/sandbox_linux.go
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
