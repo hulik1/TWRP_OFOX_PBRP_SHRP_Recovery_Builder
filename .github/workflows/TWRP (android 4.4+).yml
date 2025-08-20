@@ -73,7 +73,6 @@ jobs:
  
     - name: Check Out
       uses: actions/checkout@v4
-      Tvůj původní workflow (nezměněný), jen s doplněným tokenem u checkoutu
 
 name: Build TWRP (android 4.4+)
 
