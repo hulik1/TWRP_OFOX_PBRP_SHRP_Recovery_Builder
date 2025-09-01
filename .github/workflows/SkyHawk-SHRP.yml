@@ -10,7 +10,7 @@ on:
       MANIFEST_BRANCH:
         description: 'SHRP Manifest Branch'
         required: true
-        default: ''
+        default: 'shrp-12.1'
         type: choice
         options:
         - shrp-12.1
@@ -20,19 +20,19 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
         required: true
-        default: 'https://github.com/mlm-games/twrp_lenovo_7305x_m7_mt8765_P' 
+        default: 'https://github.com/hulik1/Sony.git' 
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
         required: true
-        default: 'shrp-9.0'
+        default: 'dev'
       DEVICE_PATH:
         description: 'Specify your Device Path' # As is, just like your DEVICE_PATH in your BoardConfig.mk
         required: true
-        default: 'device/lenovo/mt8765_P'
+        default: 'device/sony/pdx246'
       DEVICE_NAME:
         description: 'Specify your Device Codename' # As is, just like your PRODUCT_DEVICE in your device tree.
         required: true
-        default: 'mt8765_P'
+        default: 'pdx246'
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
@@ -45,7 +45,7 @@ on:
       LDCHECK:
         description: 'Use LDCHECK'
         required: false
-        default: 'false'
+        default: 'true'
         type: boolean
       LDCHECKPATH:
         description: 'Path of blobs to check' # Use it know what kind of dependencies your missing for decryption blobs.
@@ -55,7 +55,7 @@ on:
 jobs:
   build:
     name: Build SHRP by ${{ github.actor }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       OUTPUT_DIR: ${{ github.workspace }}/android-recovery/out/target/product
