@@ -6,7 +6,7 @@ on:
       MANIFEST_BRANCH:
         description: 'TWRP Manifest Branch'
         required: true
-        default: ''
+        default: 'twrp-12.1'
         type: choice
         options:
         - twrp-14
@@ -23,23 +23,23 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree' # Your already made Device Tree for TWRP
         required: true
-        default: 'https://github.com/username/repo'
+        default: 'https://github.com/hulik1/Sony.git'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch' # Your Device Tree Branch, make sure it's right.
         required: true
-        default: 'enter_your_branch'
+        default: 'dev'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/'
+        default: 'device/sony/pdx246'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: ''
+        default: 'pdx246'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME (without including .mk, Example: omni_7304F)'
         required: true
-        default: 'omni_'
+        default: 'twrp_pdx246'
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
@@ -52,7 +52,7 @@ on:
       LDCHECK:
         description: 'Use LDCHECK'
         required: false
-        default: 'false'
+        default: 'true'
         type: boolean
       LDCHECKPATH:
         description: 'Path of blobs to check' # Use it know what kind of dependencies your missing for decryption blobs.
