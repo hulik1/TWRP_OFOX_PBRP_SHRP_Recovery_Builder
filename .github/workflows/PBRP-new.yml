@@ -57,7 +57,7 @@ jobs:
         echo "BUILD_DATE=$(TZ=UTC date +%Y%m%d)" >> $GITHUB_ENV
         
     - name: Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: Clean-up
       uses: rokibhasansagar/slimhub_actions@main
@@ -77,7 +77,7 @@ jobs:
         BUILD_TARGET:  ${{ inputs.BUILD_TARGET }}
   
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       if: inputs.upload_releases == false || github.event_name != 'workflow_dispatch'
       with:
         name: PBRP-Recovery-${{ env.DEVICE_NAME }}-${{ env.BUILD_DATE }}
