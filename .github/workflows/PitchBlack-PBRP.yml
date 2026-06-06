@@ -78,7 +78,7 @@ jobs:
             echo "CHECK_LEGACY_BRANCH=true" >> $GITHUB_ENV
         fi
 
-     - name: Prepare the environment
+    - name: Prepare the environment
       run: |
         sudo apt update
         sudo apt -y upgrade
