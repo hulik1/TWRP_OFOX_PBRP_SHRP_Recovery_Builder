@@ -154,7 +154,7 @@ jobs:
         cd android-recovery
         mkdir -p device/xiaomi
         git clone https://github.com/nebrassy/device_xiaomi_sm84xx-common-TWRP.git \
-          -b android-12.1 \
+          -b android-14 \
           ./device/xiaomi/sm84xx-common
           
     - name: Check Build Makefile
