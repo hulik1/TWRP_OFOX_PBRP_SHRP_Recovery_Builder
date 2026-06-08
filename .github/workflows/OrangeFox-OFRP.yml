@@ -98,7 +98,15 @@ jobs:
         git clone ${{ inputs.DEVICE_TREE }} -b ${{ inputs.DEVICE_TREE_BRANCH }} ./${{ inputs.DEVICE_PATH }}
         cd ${{ inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
-
+        
+    - name: Clone SM84XX Common Tree
+      run: |
+        cd android-recovery
+        mkdir -p device/xiaomi
+        git clone https://github.com/nebrassy/device_xiaomi_sm84xx-common-TWRP.git \
+          -b android-12.1 \
+          ./device/xiaomi/sm84xx-common
+          
     - name: Building OrangeFox
       run: |
         pushd ${{ env.ORANGEFOX_ROOT }}
